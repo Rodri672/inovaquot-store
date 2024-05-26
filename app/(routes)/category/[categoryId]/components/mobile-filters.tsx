@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Button from "@/components/ui/button";
 import IconButton from "@/components/ui/icon-button";
@@ -46,3 +46,4 @@ const MobileFilters: React.FC<MobileFiltersProps> = ({
         </>
     );
 }
+export default MobileFilters
