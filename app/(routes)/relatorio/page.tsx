@@ -1,7 +1,5 @@
 import getBillboard from "@/actions/get-billboard";
-import getProducts from "@/actions/get-products";
 import Billboard from "@/components/billboard";
-import ProductList from "@/components/product-list";
 import Container from "@/components/ui/container";
 import {
     Accordion,
@@ -13,7 +11,7 @@ import {
 export const revalidate = 0;
 
 const HomePage = async () => {
-    const products = await getProducts({ isFeatured: true });
+ 
     const billboard = await getBillboard("bb3d5409-49d7-4b88-b5a8-0d2b9a4575e5");
 
     return (
@@ -41,7 +39,7 @@ const HomePage = async () => {
                             <AccordionTrigger>
                                 <div className="flex gap-4">
                                     Funcionalidades da Aplicação
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5">
                                         <path d="M8 16.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z" />
                                         <path fill-rule="evenodd" d="M4 4a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V4Zm4-1.5v.75c0 .414.336.75.75.75h2.5a.75.75 0 0 0 .75-.75V2.5h1A1.5 1.5 0 0 1 14.5 4v12a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 16V4A1.5 1.5 0 0 1 7 2.5h1Z" clip-rule="evenodd" />
                                     </svg>
@@ -55,7 +53,7 @@ const HomePage = async () => {
                             <AccordionTrigger>
                                 <div className="flex gap-4">
                                     Diagrama de Contexto
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5">
                                         <path fill-rule="evenodd" d="M1 5.25A2.25 2.25 0 0 1 3.25 3h13.5A2.25 2.25 0 0 1 19 5.25v9.5A2.25 2.25 0 0 1 16.75 17H3.25A2.25 2.25 0 0 1 1 14.75v-9.5Zm1.5 5.81v3.69c0 .414.336.75.75.75h13.5a.75.75 0 0 0 .75-.75v-2.69l-2.22-2.219a.75.75 0 0 0-1.06 0l-1.91 1.909.47.47a.75.75 0 1 1-1.06 1.06L6.53 8.091a.75.75 0 0 0-1.06 0l-2.97 2.97ZM12 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd" />
                                     </svg>
 
