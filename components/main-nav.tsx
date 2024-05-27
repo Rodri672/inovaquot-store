@@ -36,6 +36,16 @@ const MainNav: React.FC<MainNavProps> = ({
                     {route.label}
                 </Link>
             ))}
+              <Link
+                    key="relatorio"
+                    href="/relatorio"
+                    className={cn(
+                        "text-sm font-medium transition-colors hover:text-black",
+                        "/relatorio" ? "text-black" : "text-neutral-500"
+                    )}
+                >
+                    Relatorio
+                </Link>
         </nav>
     );
 }
