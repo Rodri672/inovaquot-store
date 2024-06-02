@@ -11,7 +11,7 @@ import {
 export const revalidate = 0;
 
 const HomePage = async () => {
- 
+
     const billboard = await getBillboard("fb25d12c-00cf-4185-826e-7d6dcdd20b0e");
 
     return (
@@ -60,6 +60,28 @@ const HomePage = async () => {
                                 </div></AccordionTrigger>
                             <AccordionContent>
                                 <img src="https://res.cloudinary.com/dzb51atg9/image/upload/v1716825050/tpmo4wjp5h2m8lojnq5l.png" alt="" />
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-4">
+                            <AccordionTrigger>
+                                <div className="flex gap-4">
+                                    Aplicações usadas
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5">
+                                        <path fill-rule="evenodd" d="M1 5.25A2.25 2.25 0 0 1 3.25 3h13.5A2.25 2.25 0 0 1 19 5.25v9.5A2.25 2.25 0 0 1 16.75 17H3.25A2.25 2.25 0 0 1 1 14.75v-9.5Zm1.5 5.81v3.69c0 .414.336.75.75.75h13.5a.75.75 0 0 0 .75-.75v-2.69l-2.22-2.219a.75.75 0 0 0-1.06 0l-1.91 1.909.47.47a.75.75 0 1 1-1.06 1.06L6.53 8.091a.75.75 0 0 0-1.06 0l-2.97 2.97ZM12 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd" />
+                                    </svg>
+
+                                </div></AccordionTrigger>
+                            <AccordionContent>
+                                <div className=" flex flex-col gap-3">
+                                    <h1 className=" font-bold text-lg">neondb</h1>
+                                    <div className="flex">
+                                        <p>Neon é uma plataforma Postgres sem servidor projetada para ajudá-lo a construir aplicativos confiáveis ​​e escalonáveis ​​com mais rapidez. Separamos computação e armazenamento para oferecer recursos modernos ao desenvolvedor, como escalonamento automático, ramificação, restauração pontual e muito mais.</p>
+                                        <img className=" max-w-32" src="https://avatars.githubusercontent.com/u/77690634?s=280&v=4" alt="" />
+                                    </div>
+                                    <a className="font-bold w-52 rounded-md p-3 bg-gray-700 text-white border-collapse" href="https://neon.tech">Saiba mais aqui</a>
+
+                                </div>
+
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
