@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'; // Import useSearchParams from next/navigation instead of next/router
+import { useSearchParams } from 'next/navigation';
 import getBillboard from "@/actions/get-billboard";
 import getSearch from "@/actions/get-search";
 import Billboard from "@/components/billboard";
@@ -8,8 +8,7 @@ import Container from "@/components/ui/container";
 
 
 const SearchPage = async () => {
-    const router = useRouter();
-    const searchParams = new URLSearchParams(router.asPath);
+    const searchParams = useSearchParams();
     const searchQuery = searchParams.get('q') || '';
     
 try{
