@@ -4,14 +4,19 @@ import getSearch from "@/actions/get-search";
 import Container from "@/components/ui/container";
 import ProductList from '@/components/product-list';
 
-const SearchPage = async () => {
-    const searchParams = useSearchParams();
-    const storeId = searchParams.get('storeId') || ''; 
-    const searchQuery = searchParams.get('q') || '';
 
+
+const SearchPage = async ({ storeId }: { storeId: string }) => {
+    const searchParams = useSearchParams();
+   
+    const searchQuery = searchParams.get('q') || '';
+    
+
+   
     try {
         const products = await getSearch(storeId, searchQuery);
 
+    
         return (
             <Container>
                 <div className="space-y-10 pb-10">
@@ -26,5 +31,6 @@ const SearchPage = async () => {
         return <div>Error fetching search results. Please try again later.</div>;
     }
 }
+
 
 export default SearchPage;
