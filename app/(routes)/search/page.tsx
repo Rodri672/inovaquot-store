@@ -1,11 +1,12 @@
-"use client"
+"use client";
 import { useSearchParams } from 'next/navigation';
 import getSearch from "@/actions/get-search";
 import Container from "@/components/ui/container";
 import ProductList from '@/components/product-list';
 
-const SearchPage = async ({ storeId }: { storeId: string }) => {
+const SearchPage = async () => {
     const searchParams = useSearchParams();
+    const storeId = searchParams.get('storeId') || ''; 
     const searchQuery = searchParams.get('q') || '';
 
     try {
