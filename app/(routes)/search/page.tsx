@@ -1,21 +1,26 @@
 "use client"
 import React, { useEffect, useState } from 'react';
+import { useSearchParams, useParams } from 'next/navigation';
 import getSearch from '@/actions/get-search';
-import { useSearchParams } from 'next/navigation';
 import ProductList from '@/components/product-list';
 import Container from '@/components/ui/container';
-import { Product } from '@/types'; 
+import { Product } from '@/types';
 
-const SearchPage = ({ storeId }: { storeId: string }) => {
+const SearchPage = () => {
     const searchParams = useSearchParams();
+    const { storeId: rawStoreId } = useParams<{ storeId: string | string[] }>(); // Handle storeId as string or string[]
     const searchQuery = searchParams.get('q') || '';
     const [products, setProducts] = useState<Product[]>([]);
+
+    const storeId = Array.isArray(rawStoreId) ? rawStoreId[0] : rawStoreId; // Ensure storeId is a string
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const products = await getSearch(storeId, searchQuery);
-                setProducts(products);
+                if (storeId) { // Ensure storeId is available
+                    const products = await getSearch(storeId, searchQuery);
+                    setProducts(products);
+                }
             } catch (error) {
                 console.error('Error fetching search results:', error);
             }
