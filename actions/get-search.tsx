@@ -1,23 +1,12 @@
 import { Product } from "@/types";
 import qs from "query-string";
 
-const URL = `${process.env.NEXT_PUBLIC_API_URL}/api/products/search`;
-
-interface Query {
-    categoryId?: string;
-    brandId?: string;
-    colorId?: string;
-    isFeatured?: boolean;
-    searchQuery?: string;
-}
-
-const getSearch = async (query: Query): Promise<Product[]> => {
+const getSearch = async (storeId: string, searchQuery: string): Promise<Product[]> => {
     const url = qs.stringifyUrl({
-        url: URL,
+        url: `${process.env.NEXT_PUBLIC_API_URL}/products/search`,
         query: {
-            
-            q: query.searchQuery
-        }
+            q: searchQuery,
+        },
     });
 
     const res = await fetch(url);
