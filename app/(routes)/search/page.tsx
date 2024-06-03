@@ -6,7 +6,7 @@ import ProductList from '@/components/product-list';
 
 const SearchPage = async () => {
     const searchParams = useSearchParams();
-    const storeId = searchParams.get('storeId') || ''; 
+    const storeId = searchParams.get('storeId') || '';
     const searchQuery = searchParams.get('q') || '';
 
     try {
