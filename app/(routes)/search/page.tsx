@@ -1,6 +1,4 @@
-"use client";
-
-import { useSearchParams } from 'next/navigation'; // Import useSearchParams from next/navigation instead of next/router
+import { useRouter } from 'next/router'; // Import useSearchParams from next/navigation instead of next/router
 import getBillboard from "@/actions/get-billboard";
 import getSearch from "@/actions/get-search";
 import Billboard from "@/components/billboard";
@@ -10,9 +8,9 @@ import Container from "@/components/ui/container";
 
 
 const SearchPage = async () => {
-    const [searchParams] = useSearchParams()
-    
-    const searchQuery = searchParams[0] || '';
+    const router = useRouter();
+    const searchParams = new URLSearchParams(router.asPath);
+    const searchQuery = searchParams.get('q') || '';
     
 try{
     const products = await getSearch({ searchQuery });
