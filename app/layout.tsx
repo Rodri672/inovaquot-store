@@ -31,6 +31,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          
         </Suspense>
       </body>
     </html>
