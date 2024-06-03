@@ -64,10 +64,13 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
                                     valueKey="sort"
                                 />
                             </div>
-                            <ClientCategoryPage
-                                products={products}
-                                sort={searchParams.sort}
-                            />
+                            <Suspense>
+                                <ClientCategoryPage
+                                    products={products}
+                                    sort={searchParams.sort}
+                                />
+                            </Suspense>
+
                         </div>
                     </div>
                 </Container>

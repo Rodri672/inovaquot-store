@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { Product } from "@/types";
 import NoResults from "@/components/ui/no-results";
 import ProductCard from "@/components/ui/product-card";
-import { useSearchParams } from "next/navigation";
 
 interface ClientCategoryPageProps {
   products: Product[];
@@ -13,9 +12,8 @@ interface ClientCategoryPageProps {
 
 const ClientCategoryPage: React.FC<ClientCategoryPageProps> = ({
   products,
+  sort,
 }) => {
-  const searchParams = useSearchParams();
-  const sort = searchParams.get("sort");
   const [sortedProducts, setSortedProducts] = useState<Product[]>(products);
 
   useEffect(() => {
