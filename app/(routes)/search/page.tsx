@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from 'react';
 import getSearch from '@/actions/get-search';
 import { useSearchParams } from 'next/navigation';
