@@ -4,7 +4,7 @@ import Container from "@/components/ui/container";
 import MainNav from "@/components/main-nav";
 import NavbarActions from "@/components/navbar-actions";
 import getCategories from "@/actions/get-categories";
-
+import SearchInput from "./SearchInput";
 export const revalidate = 0;
 
 const Navbar = async () => {
@@ -18,7 +18,7 @@ const Navbar = async () => {
                         <p className="font-bold text-xl">INOVAQUOT</p>
                     </Link>
                     <MainNav data={categories} />
-                 
+                    <SearchInput />
                     <NavbarActions />
                 </div>
             </Container>
