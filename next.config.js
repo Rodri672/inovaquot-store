@@ -6,10 +6,4 @@ const nextConfig = {
         ]
     }
 }
-
-module.exports = {
-    nextConfig,
-    experimental: {
-        missingSuspenseWithCSRBailout: false,
-      }
-}
+module.exports = nextConfig
