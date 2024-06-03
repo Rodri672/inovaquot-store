@@ -15,10 +15,7 @@ const getSearch = async (query: Query): Promise<Product[]> => {
     const url = qs.stringifyUrl({
         url: URL,
         query: {
-            categoryId: query.categoryId,
-            brandId: query.brandId,
-            colorId: query.colorId,
-            isFeatured: query.isFeatured,
+            
             q: query.searchQuery
         }
     });
