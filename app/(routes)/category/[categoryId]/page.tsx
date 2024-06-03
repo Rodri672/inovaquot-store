@@ -9,6 +9,7 @@ import Filter from "./components/filter";
 import MobileFilters from "./components/mobile-filters";
 import Sort from "@/components/ui/sort";
 import ClientCategoryPage from "./client-category-page";
+import { Suspense } from "react";
 export const revalidate = 0
 
 interface CategoryPageProps {
@@ -33,7 +34,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
     params,
     searchParams
 }) => {
-   
+
 
     const products = await getProducts({
         categoryId: params.categoryId,
@@ -46,30 +47,32 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
 
 
     return (
-        <div className="bg-white">
-            <Container>
-                <Billboard data={category.billboard} />
-                <div className="px-4 sm:px-6 lg:px-8 pb-24">
-                    <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
-                        <MobileFilters brands={brands} colors={colors} />
-                        <div className="hidden lg:block">
-                            <Filter valueKey="brandId" name="Brands" data={brands} />
-                            <Filter valueKey="colorId" name="Colors" data={colors} />
-                        
-                            <Sort
-                                options={sortOptions}
-                                name="Sort By"
-                                valueKey="sort"
+        <Suspense>
+            <div className="bg-white">
+                <Container>
+                    <Billboard data={category.billboard} />
+                    <div className="px-4 sm:px-6 lg:px-8 pb-24">
+                        <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
+                            <MobileFilters brands={brands} colors={colors} />
+                            <div className="hidden lg:block">
+                                <Filter valueKey="brandId" name="Brands" data={brands} />
+                                <Filter valueKey="colorId" name="Colors" data={colors} />
+
+                                <Sort
+                                    options={sortOptions}
+                                    name="Sort By"
+                                    valueKey="sort"
+                                />
+                            </div>
+                            <ClientCategoryPage
+                                products={products}
+                                sort={searchParams.sort}
                             />
                         </div>
-                        <ClientCategoryPage
-                            products={products}
-                            sort={searchParams.sort}
-                        />
                     </div>
-                </div>
-            </Container>
-        </div>
+                </Container>
+            </div>
+        </Suspense>
     );
 }
 
