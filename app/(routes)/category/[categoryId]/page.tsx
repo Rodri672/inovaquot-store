@@ -8,7 +8,7 @@ import NoResults from "@/components/ui/no-results";
 import Filter from "./components/filter";
 import ProductCard from "@/components/ui/product-card";
 import MobileFilters from "./components/mobile-filters";
-
+import { Combobox } from "@/components/ui/combobox";
 export const revalidate = 0
 
 interface CategoryPageProps {
@@ -44,6 +44,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
                         <div className="hidden lg:block">
                             <Filter valueKey="brandId" name="Brands" data={brands} />
                             <Filter valueKey="colorId" name="Colors" data={colors} />
+                            <Combobox ></Combobox>
                         </div>
                         <div className="mt-6 lg:col-span-4 lg:mt-0">
                             {products.length === 0 && <NoResults />}
