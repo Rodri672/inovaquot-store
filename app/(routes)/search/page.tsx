@@ -1,3 +1,4 @@
+"use client";
 import { useSearchParams } from 'next/navigation';
 import getBillboard from "@/actions/get-billboard";
 import getSearch from "@/actions/get-search";
