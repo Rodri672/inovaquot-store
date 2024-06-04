@@ -70,16 +70,48 @@ const HomePage = async () => {
                                         <path fill-rule="evenodd" d="M1 5.25A2.25 2.25 0 0 1 3.25 3h13.5A2.25 2.25 0 0 1 19 5.25v9.5A2.25 2.25 0 0 1 16.75 17H3.25A2.25 2.25 0 0 1 1 14.75v-9.5Zm1.5 5.81v3.69c0 .414.336.75.75.75h13.5a.75.75 0 0 0 .75-.75v-2.69l-2.22-2.219a.75.75 0 0 0-1.06 0l-1.91 1.909.47.47a.75.75 0 1 1-1.06 1.06L6.53 8.091a.75.75 0 0 0-1.06 0l-2.97 2.97ZM12 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd" />
                                     </svg>
 
-                                </div></AccordionTrigger>
-                            <AccordionContent>
-                                <div className=" flex flex-col gap-3">
-                                    <h1 className=" font-bold text-lg">neondb</h1>
-                                    <div className="flex">
-                                        <p>Neon é uma plataforma Postgres sem servidor projetada para ajudá-lo a construir aplicativos confiáveis ​​e escalonáveis ​​com mais rapidez. Separamos computação e armazenamento para oferecer recursos modernos ao desenvolvedor, como escalonamento automático, ramificação, restauração pontual e muito mais.</p>
-                                        <img className=" max-w-32" src="https://avatars.githubusercontent.com/u/77690634?s=280&v=4" alt="" />
-                                    </div>
-                                    <a className="font-bold w-52 rounded-md p-3 bg-gray-700 text-white border-collapse" href="https://neon.tech">Saiba mais aqui</a>
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent >
+                                <div className="gap-4 " >
 
+
+                                    <div className=" flex flex-col gap-3  p-2   ">
+                                        <h1 className=" font-bold text-lg">NeonDB</h1>
+                                        <div className="flex">
+                                            <p>Neon é uma plataforma Postgres sem servidor projetada para ajudá-lo a construir aplicativos confiáveis ​​e escalonáveis ​​com mais rapidez. Separamos computação e armazenamento para oferecer recursos modernos ao desenvolvedor, como escalonamento automático, ramificação, restauração pontual e muito mais.</p>
+                                            <img className=" max-w-32" src="https://avatars.githubusercontent.com/u/77690634?s=280&v=4" alt="" />
+                                        </div>
+                                        <a className="font-bold w-52 rounded-md p-3 bg-gray-700 text-white border-collapse" href="https://neon.tech">Saiba mais aqui</a>
+
+                                    </div>
+                                    <div className=" flex flex-col gap-3  p-2">
+                                        <h1 className=" font-bold text-lg">Stripe</h1>
+                                        <div className="flex">
+                                            <p>A tecnologia da Stripe é usada por milhões de empresas em todo o mundo, como Amazon, Google e Zoom, para gerir centenas de bilhões de dólares em pagamentos. Podemos ajudar com aceitação de pagamentos, gestão de assinaturas e verificação de identidade.</p>
+                                            <img className=" max-w-32" src="https://res.cloudinary.com/dzb51atg9/image/upload/v1717492226/iraqhpoggommygszujvw.webp" alt="" />
+                                        </div>
+                                        <a className="font-bold w-52 rounded-md p-3 bg-gray-700 text-white border-collapse" href="https://stripe.com">Saiba mais aqui</a>
+
+                                    </div>
+                                    <div className=" flex flex-col gap-3  p-2">
+                                        <h1 className=" font-bold text-lg">Clerk</h1>
+                                        <div className="flex">
+                                            <p>Clerk é uma plataforma para autenticação e gestão de utilizadores em aplicações web, permitindo login, registro, e gestão de perfis de utilizadores de forma segura e eficiente.</p>
+                                            <img className=" max-w-32" src="https://res.cloudinary.com/dzb51atg9/image/upload/v1717492570/tzmqgrmqpovrgdwefvdk.png" alt="" />
+                                        </div>
+                                        <a className="font-bold w-52 rounded-md p-3 bg-gray-700 text-white border-collapse" href="https://clerk.com">Saiba mais aqui</a>
+
+                                    </div>
+                                    <div className=" flex flex-col gap-3  p-2">
+                                        <h1 className=" font-bold text-lg">cloudinary</h1>
+                                        <div className="flex">
+                                            <p>Cloudinary fornece uma API segura e abrangente para fazer upload facilmente de arquivos de mídia do código do servidor, diretamente do navegador ou de um aplicativo móvel.</p>
+                                            <img className=" max-w-32" src="https://res.cloudinary.com/dzb51atg9/image/upload/v1717492480/floii24v7r9aeabmpzdt.png" alt="" />
+                                        </div>
+                                        <a className="font-bold w-52 rounded-md p-3 bg-gray-700 text-white border-collapse" href="https://cloudinary.com">Saiba mais aqui</a>
+
+                                    </div>
                                 </div>
 
                             </AccordionContent>
