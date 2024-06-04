@@ -7,17 +7,17 @@ import Container from "@/components/ui/container";
 
 interface ProductPagesProps {
     params: {
-        productId: string;
+        productName: string;
     }
 }
 
 const ProductPage: React.FC<ProductPagesProps> = async ({
     params
 }) => {
-    const product = await getProduct(params.productId);
+    const product = await getProduct(params.productName);
     const suggestedProducts = await getProducts({
         categoryId: product?.category?.id
-    })
+    });
 
     return (
         <div className="bg-white">
