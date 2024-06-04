@@ -17,6 +17,9 @@ const Billboard: React.FC<BillboardProps> = ({
                     <div className="font-bold text-3xl sm:text-5xl lg:text-6xl sm:max-w-xl max-w-xs">
                         {data.label}
                     </div>
+                    <div className=" bg-white rounded p-3 w-[900px] text-lg">
+                        Bem-vindo à InovaQuote! Descubra inovação e qualidade em nossa seleção exclusiva de produtos. Compre com confiança e transforme sua rotina com as melhores novidades do mercado.
+                    </div>
                 </div>
             </div>
         </div>
