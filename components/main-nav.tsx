@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 import { Category } from "@/types";
+import queryString from "query-string";
 interface MainNavProps {
     data: Category[];
 }
@@ -15,10 +16,12 @@ const MainNav: React.FC<MainNavProps> = ({
     const pathname = usePathname();
 
     const routes = data.map((route) => ({
+        id:route.id,
         href: `/category/${route.id}`,
         label: route.name,
         active: pathname === `/category/${route.id}`
     }));
+
 
     return (
         <nav
@@ -26,8 +29,9 @@ const MainNav: React.FC<MainNavProps> = ({
         >
             {routes.map((route) => (
                 <Link
+                
                     key={route.href}
-                    href={route.href}
+                    href={`/category/${route.label}/${route.id}`}                
                     className={cn(
                         "text-sm font-medium transition-colors hover:text-black",
                         route.active ? "text-black" : "text-neutral-500"
