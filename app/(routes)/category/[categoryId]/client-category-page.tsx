@@ -52,25 +52,23 @@ const ClientCategoryPage: React.FC<ClientCategoryPageProps> = ({
 
       {products.length === 0 && <NoResults key="noresults" />}
 
-      {!isOpen && (
-        <div key="col" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {sortedProducts.map((item) => (
-            <div key={item.id} className="">
-              <ProductCard key={item.id} data={item} />
-            </div>
-
-          ))}
+      {isOpen ? (
+    <div key="list" className="grid grid-cols-1">
+      {sortedProducts.map((item) => (
+        <div key={item.name} className="w-max">
+          <ProductCard key={item.name} data={item} />
         </div>
-      )}{(
-        <div key="list" className="grid grid-cols-1">
-          {sortedProducts.map((item) => (
-            <div key={item.name} className=" w-max ">
-              <ProductCard key={item.name} data={item} />
-            </div>
-
-          ))}
+      ))}
+    </div>
+  ) : (
+    <div key="col" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      {sortedProducts.map((item) => (
+        <div key={item.id} className="">
+          <ProductCard key={item.id} data={item} />
         </div>
-      )}
+      ))}
+    </div>
+  )}
 
 
     </div>
