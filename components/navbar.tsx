@@ -18,7 +18,7 @@ const Navbar = async () => {
                         <p className="font-bold text-xl">INOVAQUOT</p>
                     </Link>
                     <MainNav data={categories} />
-                    <SearchInput />
+                   
                     <NavbarActions />
                 </div>
             </Container>

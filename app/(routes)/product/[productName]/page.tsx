@@ -15,6 +15,11 @@ const ProductPage: React.FC<ProductPagesProps> = async ({
     params
 }) => {
     const product = await getProduct(params.productName);
+    
+    if (!product) {
+        return <div>Produto não encontrado</div>;
+    }
+    
     const suggestedProducts = await getProducts({
         categoryId: product?.category?.id
     });
