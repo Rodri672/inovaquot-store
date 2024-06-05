@@ -24,8 +24,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <Suspense>
-
-
           <ModalProvider />
           <ToasterProvider />
           <Navbar />
