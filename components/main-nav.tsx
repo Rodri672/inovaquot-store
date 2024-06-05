@@ -29,7 +29,6 @@ const MainNav: React.FC<MainNavProps> = ({
         >
             {routes.map((route) => (
                 <Link
-                
                     key={route.href}
                     href={`/category/${route.label}/${route.id}`}                
                     className={cn(
