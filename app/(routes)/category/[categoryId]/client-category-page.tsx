@@ -62,10 +62,10 @@ const ClientCategoryPage: React.FC<ClientCategoryPageProps> = ({
         </div>
       )}
       {isOpen && (
-        <div className="grid grid-cols-1 ">
+        <div className="grid grid-cols-1">
           {sortedProducts.map((item) => (
-            <div className="">
-              <ProductCard key={item.id} data={item} />
+            <div className=" w-max ">
+              <ProductCard key={item.id + 'list'} data={item} />
             </div>
 
           ))}
