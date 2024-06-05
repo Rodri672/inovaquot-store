@@ -10,12 +10,11 @@ import MobileFilters from "./components/mobile-filters";
 import Sort from "@/components/ui/sort";
 import ClientCategoryPage from "./client-category-page";
 import { Suspense } from "react";
-import getBillboard from "@/actions/get-billboard";
 export const revalidate = 0
 
 interface CategoryPageProps {
     params: {
-        categoryName: string
+        categoryId: string
     },
     searchParams: {
         colorId?: string
@@ -36,27 +35,22 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
     searchParams
 }) => {
 
-    const category = await getCategory(params.categoryName);
-    if (!category) {
-        
-        return <div>Categoria não encontrada</div>;
-    }
 
     const products = await getProducts({
-        categoryId: category.id,
+        categoryId: params.categoryId,
         colorId: searchParams.colorId,
         brandId: searchParams.brandId
     });
     const brands = await getBrands();
     const colors = await getColors();
+    const category = await getCategory(params.categoryId);
 
-    const billboard = await getBillboard("fb25d12c-00cf-4185-826e-7d6dcdd20b0e");
 
     return (
         <Suspense>
             <div className="bg-white">
                 <Container>
-                    <Billboard data={billboard} />
+                    <Billboard data={category.billboard} />
                     <div className="px-4 sm:px-6 lg:px-8 pb-24">
                         <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
                             <MobileFilters brands={brands} colors={colors} />
