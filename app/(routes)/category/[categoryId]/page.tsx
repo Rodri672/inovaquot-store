@@ -36,6 +36,8 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
 }) => {
 
 
+    console.log("categoryId:", category.id);
+    
     const products = await getProducts({
         categoryId: params.categoryId,
         colorId: searchParams.colorId,
@@ -47,6 +49,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
 
 
     return (
+        
         <Suspense>
             <div className="bg-white">
                 <Container>
