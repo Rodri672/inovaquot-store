@@ -42,6 +42,8 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
         return <div>Categoria não encontrada</div>;
     }
 
+    console.log("categoryId:", category.id);
+    
     const products = await getProducts({
         categoryId: category.id,
         colorId: searchParams.colorId,
@@ -53,6 +55,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
     const billboard = await getBillboard("fb25d12c-00cf-4185-826e-7d6dcdd20b0e");
 
     return (
+        
         <Suspense>
             <div className="bg-white">
                 <Container>
