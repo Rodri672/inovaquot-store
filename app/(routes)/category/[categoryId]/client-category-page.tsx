@@ -55,7 +55,7 @@ const ClientCategoryPage: React.FC<ClientCategoryPageProps> = ({
       {isOpen ? (
     <div key="list" className="grid grid-cols-1">
       {sortedProducts.map((item) => (
-        <div key={item.name} className="w-max">
+        <div key={item.name} className=" w-[450px]">
           <ProductCard key={item.name} data={item} />
         </div>
       ))}
@@ -63,7 +63,7 @@ const ClientCategoryPage: React.FC<ClientCategoryPageProps> = ({
   ) : (
     <div key="col" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       {sortedProducts.map((item) => (
-        <div key={item.id} className="">
+        <div key={item.id} className=" w-[450px]">
           <ProductCard key={item.id} data={item} />
         </div>
       ))}
