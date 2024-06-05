@@ -36,7 +36,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
 }) => {
 
 
-
+    console.log("categoryId:", category.id);
     
     const products = await getProducts({
         categoryId: params.categoryId,
